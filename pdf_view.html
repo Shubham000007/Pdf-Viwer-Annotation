@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clara Pdf Viewer | Assessment</title>
+   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/pdf_viewer.min.css" />
+    <link rel="stylesheet" href="assets/css/pdf_view.css" />
+</head>
+
+<body>
+    <!-- Pre-loader start -->
+    <div class="pdf-loader"></div>
+    <!-- Pre-loader end -->
+
+    <div class="main-container" data-pdf-path="<?php if ((!empty($path))) {
+                                                    echo $path;
+                                                } ?>">
+
+        <!-- Pdf Headers Toolbar  -->
+        <div class="pdf_toolbar">
+
+            <div class="brand-container">
+                <h5 class="brand-name"> <span>Clara</span>PDFs</h5>
+            </div>
+
+            <div class="tools_area">
+                <div id="navigation_controls">
+                    <div class="show_page_num">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="previous_button" title="Previous"><i
+                                    class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></span>
+                            <input type="text" value="1" id="page_number" class="form-control" readonly>
+                            <span class="input-group-addon" id="next_button" title="next"><i
+                                    class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+
+                    <div id="zoom_controls">
+                        <span id="zoom_in_button" title="Zoom-In"><i class="fa fa-search-plus"
+                                aria-hidden="true"></i></span>
+                        <span id="zoom_out_button" title="Zoom-Out"><i class="fa fa-search-minus"
+                                aria-hidden="true"></i></span>
+                    </div>
+
+                    <div id="rotate_controls">
+                        <span id="rotate-clockwise" title="Rotate Clockwise"><i class="fa fa-repeat"
+                                aria-hidden="true"></i></span>
+                        <span id="rotate-counterclockwise" title="Rotate Counterclockwise"><i class="fa fa-undo"
+                                aria-hidden="true"></i></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Pdf Headers Toolbar Ends -->
+
+
+        <!-- Pdf View Area -->
+        <div class="pdf_view">
+            <div class="total_page_viewer"></div>
+            <div class="section_viewer">
+                <div id="canvas_container">
+                    <canvas id="pdf-render"></canvas>
+                </div>
+            </div>
+        </div>
+        <!-- Pdf View Area Ends -->
+
+
+        <!-- Footer Area -->
+        <footer>
+            &copy; 2020, Digital &amp; Technology Partner <a href="https://www.claraedtech.com" target="_blank">Clara
+                Edtech Pvt. Ltd</a>
+        </footer>
+        <!-- Footer Area Ends -->
+
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jspdf.min.js"></script>
+    <script src="assets/js/pdf.worker.min.js"></script>
+    <script type="text/javascript" src="assets/js/pdf.min.js"></script>
+    <script src="assets/js/pdf_view.js"></script>
+</body>
+
+</html>

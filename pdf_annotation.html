@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clara Pdf Viewer | Assessment</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css"  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/pdf_viewer.min.css" />
+    <link rel="stylesheet" href="assets/css/pdf.css" />
+</head>
+
+<body>
+    <!-- Pre-loader start -->
+    <div class="pdf-loader"></div>
+    <!-- Pre-loader end -->
+    <div class="main-container">
+
+        <!-- Pdf Headers Toolbar  -->
+        <div class="pdf_toolbar">
+
+            <div class="brand-container">
+                <h5 class="brand-name"> <span>Clara</span>PDFs</h5>
+            </div>
+
+            <div class="tools_area">
+                <div class="color-box">
+                    <div class="active-Color" title="Active Color">
+                    </div>
+                    <div class="color-container" title="Pick your's colors">
+                        <span class="color_div" data-target-color="#fff" style="background-color: #fff;"
+                            onclick="return change_color('fff');"></span>
+                        <span class="color_div" data-target-color="#c70039" style="background-color: #c70039;"
+                            onclick="return change_color('c70039');"></span>
+                        <span class="color_div" data-target-color="#9f5f80" style="background-color: #9f5f80;"
+                            onclick="return change_color('9f5f80');"></span>
+                        <span class="color_div" data-target-color="#16c79a" style="background-color: #16c79a;"
+                            onclick="return change_color('16c79a');"></span>
+                        <span class="color_div" data-target-color="#fa9579" style="background-color: #fa9579;"
+                            onclick="return change_color('fa9579');"></span>
+                        <span class="color_div" data-target-color="#a7c5eb" style="background-color: #a7c5eb;"
+                            onclick="return change_color('a7c5eb');"></span>
+                        <span class="color_div" data-target-color="#fdb827" style="background-color: #fdb827;"
+                            onclick="return change_color('fdb827');"></span>
+                        <span class="color_div" data-target-color="#0f0f0f" style="background-color: #0f0f0f;"
+                            onclick="return change_color('0f0f0f');"></span>
+
+
+                        <span class="color_div" data-target-color="#fca3cc" style="background-color: #fca3cc;"
+                            onclick="return change_color('fca3cc');"></span>
+                        <span class="color_div" data-target-color="#30475e" style="background-color: #30475e;"
+                            onclick="return change_color('30475e');"></span>
+                        <span class="color_div" data-target-color="#a20a0a" style="background-color: #a20a0a;"
+                            onclick="return change_color('a20a0a');"></span>
+                        <span class="color_div" data-target-color="#790c5a" style="background-color: #790c5a;"
+                            onclick="return change_color('790c5a');"></span>
+                        <span class="color_div" data-target-color="#28df99" style="background-color: #28df99;"
+                            onclick="return change_color('28df99');"></span>
+                        <span class="color_div" data-target-color="#1d2d50" style="background-color: #1d2d50;"
+                            onclick="return change_color('1d2d50');"></span>
+                        <span class="color_div" data-target-color="#e0ece4" style="background-color: #e0ece4;"
+                            onclick="return change_color('e0ece4');"></span>
+                        <span class="color_div" data-target-color="#e0ece4" style="background-color: #e0ece4;"
+                            onclick="return change_color('e0ece4');"></span>
+
+
+                        <span class="color_div" data-target-color="#382933" style="background-color: #382933;"
+                            onclick="return change_color('382933');"></span>
+                        <span class="color_div" data-target-color="#6f4a8e" style="background-color: #6f4a8e;"
+                            onclick="return change_color('6f4a8e');"></span>
+                        <span class="color_div" data-target-color="#2b580c" style="background-color: #2b580c;"
+                            onclick="return change_color('2b580c');"></span>
+                        <span class="color_div" data-target-color="#9d0b0b" style="background-color: #9d0b0b;"
+                            onclick="return change_color('9d0b0b');"></span>
+                    </div>
+                </div>
+
+                <div id="navigation_controls">
+                    <div>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="previous_button" title="Previous"><i
+                                    class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></span>
+                            <input type="text" value="1" id="page_number" class="form-control" readonly>
+                            <span class="input-group-addon" id="next_button" title="next"><i
+                                    class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+
+                    <div id="zoom_controls">
+                        <span id="zoom_in_button" title="Zoom-In"><i class="fa fa-search-plus"
+                                aria-hidden="true"></i></span>
+                        <span id="zoom_out_button" title="Zoom-Out"><i class="fa fa-search-minus"
+                                aria-hidden="true"></i></span>
+                    </div>
+
+                    <div id="rotate_controls">
+                        <span id="rotate-clockwise" title="Rotate Clockwise"><i class="fa fa-repeat"
+                                aria-hidden="true"></i></span>
+                        <span id="rotate-counterclockwise" title="Rotate Counterclockwise"><i class="fa fa-undo"
+                                aria-hidden="true"></i></span>
+                    </div>
+
+                    <div id="restore_controls">
+                        <span id="eraser_tool" title="Rotate Clockwise"><i class="fa fa-eraser" aria-hidden="true">
+                                Clear Page</i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="save_option_containers">
+                <span id="save_pdf" title="Save"><i class="fa fa-floppy-o" aria-hidden="true"></i></span>
+            </div>
+        </div>
+        <!-- Pdf Headers Toolbar Ends -->
+
+
+        <!-- Pdf View Area -->
+        <div class="pdf_view">
+            <div class="total_page_viewer"></div>
+            <div class="section_viewer">
+                <div class="canvas_container">
+                    <!-- <canvas id="pdf-render"></canvas> -->
+                </div>
+            </div>
+        </div>
+        <!-- Pdf View Area Ends -->
+
+
+        <!-- Footer Area -->
+        <footer>
+            &copy; 2020, Digital &amp; Technology Partner <a href="https://www.claraedtech.com" target="_blank">Clara
+                Edtech Pvt. Ltd</a>
+        </footer>
+        <!-- Footer Area Ends -->
+
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jspdf.min.js"></script>
+    <script src="assets/js/pdf.worker.min.js"></script>
+    <script type="text/javascript" src="assets/js/pdf.min.js"></script>
+    <script src="assets/js/pdf_custom.js"></script>
+</body>
+
+</html>

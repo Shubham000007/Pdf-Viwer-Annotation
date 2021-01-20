@@ -1,0 +1,391 @@
+:root {
+    --custom-primary-color: #fff;
+    --custom-hover-primary-color: #fff;
+    --pdf-border-color: #d6d3d3;
+    --light-grey-bg-color: #ebecf0;
+    --light-blue-color: #eefaff;
+    --white-color: #fff;
+}
+
+::selection {
+    background: rgba(0, 0, 255, 0.3);
+}
+
+body::-webkit-scrollbar {
+    width: 11px !important;
+    height: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    /* box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+    display: none;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    outline: 1px solid slategrey;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    outline: none !important;
+    list-style-type: none !important;
+    box-sizing: border-box !important;
+    border: none;
+}
+
+
+/* loader css  */
+
+.pdf-loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('../loader/main_loader.gif') 50% 50% no-repeat rgb(255, 255, 255);
+    opacity: 1;
+}
+
+/* loader css Ends  */
+
+.main-container {
+    width: 100%;
+    height: 100vh !important;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+
+/* Pdf Toolbar  */
+
+.pdf_toolbar {
+    background: rgba(249, 249, 250, 1);
+    width: 100%;
+    max-height: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid var(--pdf-border-color);
+    /* padding: 1rem; */
+    overflow: hidden;
+}
+
+
+/* Brand Design  */
+
+.brand-container {
+    padding: 1rem;
+    width: 20%;
+}
+
+.brand-container h5 {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: darkorange;
+}
+
+.brand-container span {
+    color: red;
+}
+
+
+/* Brand Design Ends */
+
+
+/* Tool area Design  */
+
+.tools_area {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: auto;
+    width: 80%;
+}
+
+#navigation_controls {
+    margin-left: 20px;
+    margin-right: 20px;
+    border-right: 1px solid var(--pdf-border-color);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex: auto; */
+}
+
+.show_page_num {
+    align-self: center;
+}
+
+#navigation_controls span {
+    cursor: pointer;
+}
+
+#navigation_controls input {
+    max-width: 80px;
+}
+
+#page_number {
+    text-align: center;
+}
+
+.input-group-addon {
+    background-color: #fff !important;
+}
+
+.input-group-addon i {
+    font-size: 1.5rem;
+}
+
+#zoom_controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
+#rotate_controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#zoom_controls span {
+    margin-left: .5rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    cursor: pointer;
+    width: 50%;
+    height: 20%;
+}
+
+#rotate_controls span {
+    margin-left: .5rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    cursor: pointer;
+    width: 50%;
+    height: 20%;
+}
+
+#zoom_controls button i {
+    font-size: 1.2rem;
+}
+
+.color-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-basis: 70%;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    max-height: 70px;
+}
+
+
+/* .choosed_color {
+    border-right: 1px solid var(--pdf-border-color);
+    border-left: 1px solid var(--pdf-border-color);
+    padding: 1.5rem;
+    width: 20%;
+    margin-left: 20px;
+    margin-right: 20px;
+} */
+
+
+/* .other-color {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-right: 1px solid var(--pdf-border-color);
+    border-left: 1px solid var(--pdf-border-color);
+    padding: 1.5rem;
+    width: 20%;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-wrap: wrap;
+} */
+
+.color-box {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+    border-right: 1px solid var(--pdf-border-color);
+    border-left: 1px solid var(--pdf-border-color);
+}
+
+.active-Color {
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--pdf-border-color);
+    background-color: #000;
+    cursor: pointer;
+}
+
+.color-container .color_div {
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--pdf-border-color);
+    margin-left: .3rem;
+    margin-top: .3rem;
+    cursor: pointer;
+}
+
+
+.save_option_containers {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+.save_option_containers span {
+    margin-left: .5rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    cursor: pointer;
+    width: 50%;
+    height: 20%;
+}
+
+#restore_controls {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+#restore_controls span {
+    margin-left: .5rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    cursor: pointer;
+    width: 50%;
+    height: 20%;
+}
+
+
+/* Tool area Design Ends  */
+
+
+/* Pdf Toolbar Ends */
+
+
+/* PDf View Area Design  */
+
+.pdf_view {
+    width: 100%;
+    height: calc(100vh - 140px);
+    flex: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.total_page_viewer {
+    width: 20%;
+    border-right: 1px solid var(--pdf-border-color);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.25);
+}
+
+.preview_pages {
+    width: 80%;
+    height: 300px;
+    max-height: 300px;
+    border: 1px solid var(--pdf-border-color);
+    margin-top: 1rem;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 1);
+    background-clip: content-box;
+}
+
+.preview_pages:hover {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: 5px solid rgba(0, 0, 0, 0);
+    opacity: 0.8;
+    transition: all .5s;
+}
+
+.active {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: 5px solid rgba(0, 0, 0, 0);
+    opacity: 0.8;
+}
+
+.section_viewer {
+    width: 80%;
+    height: 100%;
+    max-height: 100%;
+    padding: 1rem;
+    text-align: center;
+    background: rgba(237, 237, 240, 1);
+}
+
+.canvas_container {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    overflow: auto !important;
+    margin: 1px auto -8px auto;
+    cursor: pointer;
+    /* background: rgba(237, 237, 240, 1); */
+    /* box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5),
+        0 2px 8px rgba(0, 0, 0, 0.3); */
+}
+
+.canvas_container canvas {
+    /* height: 1319px; */
+    background-color: #fff;
+    box-shadow: 2px 2px 2px rgba(215, 215, 219, 1);
+    border-radius: 10px;
+    border: 1px rgba(215, 215, 219, 1);
+    ;
+}
+
+
+/* PDf View Area Design Ends */
+
+
+/* Footer  */
+
+footer {
+    padding: 1rem;
+    width: 100%;
+    max-height: 70px;
+    margin: 0px auto;
+    background: var(--custom-primary-color);
+    color: #000;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+footer a {
+    font-weight: bold;
+}
+
+
+/* Footer Ends */
